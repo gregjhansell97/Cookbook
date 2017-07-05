@@ -1,4 +1,5 @@
 #include "Recipe.h"
+#include "Ingredient_Collection.h"
 #include <map>
 #include <string>
 
@@ -11,8 +12,13 @@ public:
   Recipe_Collection();
 
   //setters
-  void add_recipe(Recipe r);
-  void remove_recipe(string key);
+  void add_recipe(Recipe r){  recipes[r.get_key()] = r; }
+  void remove_recipe(const string &key){ recipes.erase(key); };
+  void have_ingredients(Ingredient_Collection& input, Recipe_Collection& output);
+
+
+  //getters
+  void get_recipe(Recipe& output);
 
 
   //other

@@ -107,9 +107,9 @@ int main(){
 		getline(cin, cmd);
 		if(cmd == "save"){
 		  save_data("data.txt");
-		}else if(cmd == "add recipe"){
+		}else if(cmd == "add"){
 			add_recipe();
-		}else if(cmd == "remove recipe"){
+		}else if(cmd == "rm"){
 			remove_recipe();
 		}else if(cmd == "exit"){
 			break;

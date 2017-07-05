@@ -13,14 +13,15 @@ public:
 
   //setters
   void add_ingredient(Ingredient i);
+  unsigned int get_composite_id();
 
   //other
   void print() const; //useful for debugging
   void write_to_file(ofstream& ofs) const;
 
 private:
-  //Hashmap/ or actual map instead of vector
   vector<Ingredient> ingredients;
+  unsigned int composite_id;
 };
 
 #endif

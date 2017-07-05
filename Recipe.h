@@ -16,6 +16,7 @@ public:
   string get_page_number() const{ return page_number;}
   string get_name() const{ return name; }
   string get_key() const{ return name + page_number + book_name; }
+  unsigned int get_composite_id(){ return ingredients.get_composite_id(); }
 
   //setters
   //Add ingredient (n = name, m = measurement)
@@ -30,7 +31,6 @@ private:
   string book_name;
   string page_number;
   string name;
-
 
   Ingredient_Collection ingredients;
 };
