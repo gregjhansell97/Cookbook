@@ -8,20 +8,19 @@ using namespace std;
 
 class Ingredient_Collection{
 public:
-  Ingredient_Collection();
+
   //getters
+  unsigned int size(){ return ingredients.size(); }
 
   //setters
   void add_ingredient(Ingredient i);
-  unsigned int get_composite_id();
 
   //other
   void print() const; //useful for debugging
-  void write_to_file(ofstream& ofs) const;
+  void write_to_file(ofstream& ofs) const; //used in save chain of commands
 
 private:
-  vector<Ingredient> ingredients;
-  unsigned int composite_id;
+  vector<Ingredient> ingredients; //the ingredients it's given
 };
 
 #endif

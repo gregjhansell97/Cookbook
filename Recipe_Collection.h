@@ -12,7 +12,7 @@ public:
   Recipe_Collection();
 
   //setters
-  void add_recipe(Recipe r){  recipes[r.get_key()] = r; }
+  Recipe* add_recipe(Recipe r){  return &(recipes[r.get_key()] = r); }
   void remove_recipe(const string &key){ recipes.erase(key); };
   void have_ingredients(Ingredient_Collection& input, Recipe_Collection& output);
 

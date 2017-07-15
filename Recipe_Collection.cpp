@@ -6,6 +6,7 @@ Recipe_Collection::Recipe_Collection(){
   //do something
 }
 
+//Recipe* Recipe_Collection::add_recipe(Recipe r){}
 void Recipe_Collection::write_to_file(ofstream& ofs){
   map<string, Recipe>::iterator i = recipes.begin();
   for(; i != recipes.end(); i++){

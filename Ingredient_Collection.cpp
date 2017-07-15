@@ -2,13 +2,8 @@
 
 using namespace std;
 
-Ingredient_Collection::Ingredient_Collection(){
-  composite_id = 1;
-}
-
 void Ingredient_Collection::add_ingredient(Ingredient i){
   ingredients.push_back(i);
-  composite_id *= i.get_prime_id();
 }
 
 void Ingredient_Collection::print() const{

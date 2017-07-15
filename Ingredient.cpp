@@ -1,10 +1,13 @@
 #include "Ingredient.h"
-#include <iostream>
 
 using namespace std;
 
+Ingredient::Ingredient(){
+  name = "";
+  measurement = "";
+}
+
 Ingredient::Ingredient(const string& n, const string& m){
-  prime_id = 1;
   name = n;
   measurement = m;
 }

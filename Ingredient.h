@@ -1,3 +1,5 @@
+
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -7,21 +9,25 @@ using namespace std;
 
 class Ingredient{
 public:
+  //constructors
+  //n = name, m = measurement
+  Ingredient();
   Ingredient(const string& n, const string& m);
 
   //getters
-  unsigned int get_prime_id(){ return prime_id;}
   string get_name() const{ return name; }
   string get_measurement() const{ return measurement; }
+
+  //setters
+  void set_name(const string& n){ name = n; }
+  void set_measurement(const string& m){ measurement = m; }
 
   //other
   void print() const;
 
 private:
-  //There should be a hashmap of ingredients with corresponding prime numbers
-  unsigned int prime_id; //a prime number signifiying specific ingredient
-  string name;
-  string measurement;
+  string name; //the name of the ingredient
+  string measurement; //the how much of the ingredient
 };
 
 #endif

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <list>
 #include "Recipe.h"
 #include "Recipe_Collection.h"
 
@@ -30,11 +31,25 @@ void add_recipe();
 
 void remove_recipe();
 
+void recipes_with();
+
 void save_data(const char* file_name){
 	ofstream data;
   data.open(file_name);
 	recipes.write_to_file(data);
 	data.close();
+}
+
+void recipes_with(){
+	string x = "";
+	cout << "Ingredient:";
+	getline(cin, x);
+	//cout << Recipe::recipes[x].size() << endl;
+	list<Recipe*> r = Recipe::recipes[x];
+	list<Recipe*>::iterator i = r.begin();
+	for(; i != r.end(); i ++){
+		cout << (*i)->get_name() << endl;
+	}
 }
 
 void retrieve_data(const char* file_name){
@@ -43,11 +58,10 @@ void retrieve_data(const char* file_name){
 	while(getline(data, temp1)){ //cookbook name
 		getline(data, temp2); //page number
 		getline(data, temp3); //recipe name
-		Recipe r(temp1, temp2, temp3);//creates a place holder object
+		Recipe* r = recipes.add_recipe(Recipe(temp1, temp2, temp3));
 		while(splitline(data, temp1, temp2)){
-	  	r.add_ingredient(temp1, temp2);
+	  	r->add_ingredient(temp1, temp2);
 		}
-		recipes.add_recipe(r); //adds the recipe to the recipe list
 	}
 	data.close();
 }
@@ -113,6 +127,8 @@ int main(){
 			remove_recipe();
 		}else if(cmd == "exit"){
 			break;
+		}else if(cmd == "ingredient"){
+			recipes_with();
 		}else{
 			cout << "COMMAND NOT FOUND" << endl;
 		}

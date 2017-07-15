@@ -4,6 +4,8 @@
 
 using namespace std;
 
+unordered_map<string, list< Recipe* > > Recipe::recipes;
+
 Recipe::Recipe(const string& bn, string pn, const string& n){
   book_name = bn;
   page_number = pn;
@@ -11,6 +13,7 @@ Recipe::Recipe(const string& bn, string pn, const string& n){
 }
 
 void Recipe::add_ingredient(const string& n, const string& m){
+  recipes[n].push_back(this); //keeps track of what recipes need each ingredient
   ingredients.add_ingredient(Ingredient(n, m));
 }
 
