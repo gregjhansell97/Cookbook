@@ -2,6 +2,7 @@
 #include "Ingredient_Collection.h"
 #include <map>
 #include <string>
+#include <iostream>
 
 using namespace std;
 #ifndef Recipe_Collection_h
@@ -22,6 +23,7 @@ public:
 
 
   //other
+  void print();
   void write_to_file(ofstream& ofs);
 
 private:

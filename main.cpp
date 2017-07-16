@@ -127,6 +127,8 @@ int main(){
 			remove_recipe();
 		}else if(cmd == "exit"){
 			break;
+		}else if(cmd == "print"){
+			recipes.print();
 		}else if(cmd == "ingredient"){
 			recipes_with();
 		}else{

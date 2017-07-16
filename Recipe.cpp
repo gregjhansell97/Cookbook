@@ -1,5 +1,4 @@
-#include <iostream>
-#include <sstream>
+
 #include "Recipe.h"
 
 using namespace std;
@@ -31,10 +30,4 @@ void Recipe::write_to_file(ofstream& ofs) const{
   ofs << name << endl;
   ingredients.write_to_file(ofs);
   ofs << "----------" << endl;
-}
-
-bool operator==(const Recipe& lhs, const Recipe& rhs){
-  return lhs.book_name == rhs.book_name
-      && lhs.page_number == rhs.page_number
-      && lhs.name == rhs.name;
 }

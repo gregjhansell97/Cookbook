@@ -44,5 +44,4 @@ private:
   Ingredient_Collection ingredients;
 };
 
-bool operator==(const Recipe& lhs, const Recipe& rhs);
 #endif
