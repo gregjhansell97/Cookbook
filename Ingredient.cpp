@@ -1,7 +1,5 @@
 #include "Ingredient.h"
 
-using namespace std;
-
 Ingredient::Ingredient(){
   name = "";
   measurement = "";

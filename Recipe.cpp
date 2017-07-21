@@ -38,17 +38,18 @@ vector<Recipe*> find_recipes(vector<string> &s){
   static unsigned int occurence = 0;
   vector<Recipe*> matched_recipes;
   for(unsigned int i = 0; i < s.size(); i++){
-    list<Recipe*> r = Recipe::recipes[i];
+    list<Recipe*> r = Recipe::recipes[s[i]];
   	list<Recipe*>::iterator itr = r.begin();
   	for(; itr != r.end(); itr++){
       if((*itr)->occurence != occurence){
         (*itr)->occurence = occurence;
         (*itr)->match_count = 0;
-      } else if((*itr)->match_count_at_max){
-        matched_recipes.push_back(itr);
+      } else if((*itr)->match_count_at_max()){
+        matched_recipes.push_back(*itr);
       }
       (*itr)->match_count++;
   	}
   }
   occurence++;
+  return matched_recipes;
 }

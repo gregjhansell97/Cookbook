@@ -3,6 +3,7 @@
 #include <vector>
 #include <list>
 #include "Recipe.h"
+#include "Measurement.h"
 #include "Recipe_Collection.h"
 
 using namespace std;
@@ -115,6 +116,9 @@ void remove_recipe(){
 
 int main(){
 	string cmd = "";
+	Measurement m("1 tablespoon");
+	cout << m.get_amount() << endl;
+	cout << m.get_type() << endl;
 	cout << "Getting file data" << endl;
   retrieve_data("data.txt");
 	while(cmd != "exit"){

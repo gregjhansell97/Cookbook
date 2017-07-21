@@ -10,7 +10,7 @@ class Ingredient_Collection{
 public:
 
   //getters
-  unsigned int size(){ return ingredients.size(); }
+  unsigned int size() const{ return ingredients.size(); }
 
   //setters
   void add_ingredient(Ingredient i);
