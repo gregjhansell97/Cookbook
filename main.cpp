@@ -116,7 +116,7 @@ void remove_recipe(){
 
 int main(){
 	string cmd = "";
-	Measurement m("1 tablespoon");
+	Measurement m("21.255 cups");
 	cout << m.get_amount() << endl;
 	cout << m.get_type() << endl;
 	cout << "Getting file data" << endl;

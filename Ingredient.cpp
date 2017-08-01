@@ -2,7 +2,6 @@
 
 Ingredient::Ingredient(){
   name = "";
-  measurement = "";
 }
 
 Ingredient::Ingredient(const string& n, const string& m){
@@ -11,5 +10,5 @@ Ingredient::Ingredient(const string& n, const string& m){
 }
 
 void Ingredient::print() const{
-  cout << name << " : " << measurement << endl;
+  cout << name << " : " << measurement.get_name() << endl;
 }

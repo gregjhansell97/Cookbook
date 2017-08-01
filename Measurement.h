@@ -10,9 +10,10 @@ using namespace std;
 class Measurement{
 public:
   Measurement();
-  Measurement(const string &s);
+  Measurement(const string &s){ split(s); }
 
   //getters
+  string get_name() const{ return name; }
   float get_amount() const{ return amount; }
   string get_type() const{ return type; }
 
@@ -21,8 +22,10 @@ public:
   //other
 
 private:
+  void split(const string &s);
   float amount;
   string type;
+  string name;
   float base_amount;
 };
 

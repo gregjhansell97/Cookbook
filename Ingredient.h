@@ -1,4 +1,4 @@
-
+#include "Measurement.h"
 #include <iostream>
 #include <string>
 
@@ -16,7 +16,7 @@ public:
 
   //getters
   string get_name() const{ return name; }
-  string get_measurement() const{ return measurement; }
+  string get_measurement() const{ return measurement.get_name(); }
 
   //setters
   void set_name(const string& n){ name = n; }
@@ -27,7 +27,7 @@ public:
 
 private:
   string name; //the name of the ingredient
-  string measurement; //the how much of the ingredient
+  Measurement measurement; //the how much of the ingredient
 };
 
 #endif

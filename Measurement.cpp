@@ -3,37 +3,28 @@
 Measurement::Measurement(){
   amount = 0;
   type = "";
+  name = "";
 }
 
-Measurement::Measurement(const string &s){
+//Format: <Amount> <type>
+void Measurement::split(const string &s){
+  name = s;
+  float dec = 1;
   amount = 0;
   type = "";
-  float dec = 1;
-  for(int i = 0; i < s.size(); i++){
+  for(unsigned int i = 0; i < s.size(); i++){
     char c = s[i];
     if((c - '0' < 10 && c - '0' >= 0 )|| c == '.'){
       if(c == '.' || dec != 1){
-        amount += (c-'0')*dec;
+        if(c != '.') amount += (c-'0')*dec;
         dec /= 10.0;
       }else{
         amount *= 10;
         amount += (c-'0');
       }
     }else{
-      if(!(type.size() == 0 && c == ' ')){
-        cout << "d" << c << 'G' << endl;
-        type = type + c;
-      }else{
-        cout << "H" << c << "KK" << endl;
-      }
+      if(type.size() == 0 && c == ' ') continue;
+      type = type + c;
     }
-    cout << type << endl;
   }
-
-
-  stringstream ss(s);
-  if(!(ss >> amount)) amount = 0;
-  getline(ss, type);
-
-
 }
