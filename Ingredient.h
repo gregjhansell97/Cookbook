@@ -23,7 +23,7 @@ public:
   void set_measurement(const string& m){ measurement = m; }
 
   //other
-  void print() const;
+  void print_data() const;
 
 private:
   string name; //the name of the ingredient

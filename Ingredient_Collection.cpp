@@ -6,9 +6,10 @@ void Ingredient_Collection::add_ingredient(Ingredient i){
   ingredients.push_back(i);
 }
 
-void Ingredient_Collection::print() const{
+void Ingredient_Collection::print_data() const{
   for(unsigned int i = 0; i < ingredients.size(); i++){
-    ingredients[i].print();
+    cout << "  ";
+    ingredients[i].print_data();
   }
 }
 

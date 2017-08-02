@@ -9,6 +9,6 @@ Ingredient::Ingredient(const string& n, const string& m){
   measurement = m;
 }
 
-void Ingredient::print() const{
+void Ingredient::print_data() const{
   cout << name << " : " << measurement.get_name() << endl;
 }

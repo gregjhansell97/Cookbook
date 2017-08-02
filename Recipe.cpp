@@ -18,12 +18,12 @@ void Recipe::add_ingredient(const string& n, const string& m){
   ingredients.add_ingredient(Ingredient(n, m));
 }
 
-void Recipe::print() const{
+void Recipe::print_data() const{
   cout << "book name: " <<book_name << endl;
   cout << "page number: "<< page_number << endl;
   cout << "name: " << name << endl;
   cout << "ingredients: " << endl;
-  ingredients.print();
+  ingredients.print_data();
 }
 
 void Recipe::write_to_file(ofstream& ofs) const{

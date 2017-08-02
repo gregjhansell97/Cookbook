@@ -25,14 +25,14 @@ public:
   string get_book_name() const{ return book_name;}
   string get_page_number() const{ return page_number;}
   string get_name() const{ return name; }
-  string get_key() const{ return name + page_number + book_name; } //acts as the objects signature, that makes it easy to alphabetize
+  string get_key() const{ return book_name + page_number + name; } //acts as the objects signature, that makes it easy to alphabetize
   bool match_count_at_max() const{ return match_count == ingredients.size(); }
   //setters
   //Add ingredient (n = name, m = measurement)
   void add_ingredient(const string& n, const string& m);
 
   //other
-  void print() const; //useful for debugging
+  void print_data() const; //useful for debugging
   void write_to_file(ofstream& ofs) const;
   friend bool operator==(const Recipe& lhs, const Recipe& rhs);
 

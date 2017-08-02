@@ -23,7 +23,8 @@ public:
 
 
   //other
-  void print();
+  void print_data();
+  void print_recipes();
   void write_to_file(ofstream& ofs);
 
 private:

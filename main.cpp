@@ -116,28 +116,20 @@ void remove_recipe(){
 
 int main(){
 	string cmd = "";
-	Measurement m("21.255 cups");
-	cout << m.get_amount() << endl;
-	cout << m.get_type() << endl;
 	cout << "Getting file data" << endl;
   retrieve_data("data.txt");
 	while(cmd != "exit"){
-		getline(cin, cmd);
-		if(cmd == "save"){
-		  save_data("data.txt");
-		}else if(cmd == "add"){
-			add_recipe();
-		}else if(cmd == "rm"){
-			remove_recipe();
-		}else if(cmd == "exit"){
-			break;
-		}else if(cmd == "print"){
-			recipes.print();
-		}else if(cmd == "ingredient"){
-			recipes_with();
-		}else{
-			cout << "COMMAND NOT FOUND" << endl;
+		cin >> cmd;
+		if(cmd == "save") save_data("data.txt");
+		if(cmd == "add") add_recipe();
+		if(cmd == "rm") remove_recipe();
+		if(cmd == "exit") break;
+		if(cmd == "print"){
+			cin >> cmd;
+			if(cmd == "-recipes") recipes.print_recipes();
+			if(cmd == "-data") recipes.print_data();
 		}
+		if(cmd == "ingredient") recipes_with();
 	}
 	cout << "Saving file data" << endl;
 	save_data("data.txt");

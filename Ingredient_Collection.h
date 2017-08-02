@@ -16,7 +16,7 @@ public:
   void add_ingredient(Ingredient i);
 
   //other
-  void print() const; //useful for debugging
+  void print_data() const; //useful for debugging
   void write_to_file(ofstream& ofs) const; //used in save chain of commands
 
 private:
