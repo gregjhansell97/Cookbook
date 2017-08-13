@@ -1,7 +1,10 @@
 #include "Measurement.h"
 
+
+//need to add this comment to repush
+
 Measurement::Measurement(){
-  amount = 0;
+  unit = 0;
   type = "";
   name = "";
 }
