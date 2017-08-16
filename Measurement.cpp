@@ -1,12 +1,23 @@
 #include "Measurement.h"
 
-
-//need to add this comment to repush
-
 Measurement::Measurement(){
   unit = "";
   amount = 0.0;
-  style = DRY;
+  style = UNKNOWN;
+}
+
+string Measurement::get_signature() const{
+  char t = 'K'; //for unknown...
+
+  if(style == DRY){
+    t = 'D';
+  }else if(style == WET){
+    t = 'W';
+  }else if(style == QUANTITY){
+    t = 'Q';
+  }
+
+  return to_string(amount) + ":" + unit + ":" + t;
 }
 
 //Format: <Amount>:<Unit>:<Style>
@@ -15,6 +26,7 @@ void Measurement::split(const string &s){
   amount = 0.0;
   unit = "";
   unsigned int i; //current index in for loop
+  style = UNKNOWN;
 
   //iterating through every character in the input string s
   for(i = 0; i < s.size(); i++){
@@ -37,5 +49,11 @@ void Measurement::split(const string &s){
     unit = unit + c;
   }
   i++;
-  //style = (s[i] == 'W')*(WET) + (s[i] == 'Q')*(QUANTITY);
+  if(s[i] == 'D'){
+    style = DRY;
+  }else if(s[i] == 'W'){
+    style = WET;
+  }else if(s[i] == 'Q'){
+    style = QUANTITY;
+  }
 }
