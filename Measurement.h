@@ -24,9 +24,10 @@ public:
   //other
 
 private:
+  //Variables
   string unit; //cups, pounds, grams
-  float amount;
-  Measurement_Type style;
+  float amount; //1.24 (not 1/4)
+  Measurement_Type style; //DRY, WET or QUANTITY
   void split(const string &s);
 };
 
