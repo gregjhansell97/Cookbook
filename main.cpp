@@ -9,9 +9,12 @@ using namespace std;
 
 
 int main(){
-  Measurement m("10.6750000:cups:Q");
-  cout << m.get_amount() << endl;
-  cout << m.get_unit() << endl;
-  cout << m.get_style() << endl;
-  cout << m.get_signature() << endl;
+  Measurement::create_conversion_table("measurement_conversion_table.txt");
+  Measurement m("10:cups:Q");
+  Measurement k = m/2;
+
+  //cout << m.get_amount() << endl;
+  //cout << m.get_unit() << endl;
+  //cout << m.get_style() << endl;
+  cout << k.get_signature() << endl;
 }
