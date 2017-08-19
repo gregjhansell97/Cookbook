@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <list>
+#include "Ingredient.h"
 #include "Measurement.h"
 
 using namespace std;
@@ -9,5 +10,8 @@ using namespace std;
 
 
 int main(){
-  cout << "hello world" << endl;
+
+  Ingredient foo = Ingredient::create_ingredient("dog");
+
+
 }
