@@ -56,5 +56,16 @@ void Ingredient::create_ingredients(const char* fn){
 }
 
 void Ingredient::save_ingredients(const char* fn){
-  cout << "not made yet..." << endl;
+  ofstream igr_file(fn);
+  map<string, Ingredient*>::iterator itr = ingredients.begin();
+  for(; itr != ingredients.end(); itr++){
+    Ingredient* ing = (itr->second);
+    igr_file << ing->name << " END ";
+    for(int i = 0; i < FLAVORS; i++){
+      igr_file << ing->taste[i] << " ";
+    }
+    igr_file << "-1\n";
+  }
+
+  igr_file.close();
 }
