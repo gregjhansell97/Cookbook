@@ -1,27 +1,24 @@
 #include <iostream>
-#include <fstream>
-#include <vector>
-#include <list>
-#include "Ingredient.h"
-#include "Measurement.h"
-#include "Recipe.h"
+#include <stdint.h>
+
+#include "./interface/Item.h"
+#include "./interface/Ingredient.h"
+#include "./interface/Product.h"
 
 using namespace std;
 
-bool recipe_test(){
-  ifstream raw_data("test.txt");
-
-  Recipe r(raw_data);
-  r.print_recipe();
-
-  Recipe secret_formula(raw_data);
-  secret_formula.print_recipe();
-
-  return true;
-}
-
+typedef unsigned __int128 uint128_t;
 int main(){
 
-  assert(recipe_test());
-
+  cout << "Hello world" << endl;
+  Item *i = Ingredient::create_ingredient("bread");
+  Item *j = Product::create_product("bread");
+  Item *c = Product::create_product("salt");
+  i->print();
+  if(i == j){
+    cout << "Hey we're equivalent" << endl;
+  }
+  c->print();
+  uint128_t x = 0;
+  //i.test();
 }
