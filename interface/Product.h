@@ -11,12 +11,12 @@ using namespace std;
 class Product : Item{
 public:
 
-  static Item* create_product(string nm);
+  static Item* create_product(string _name);
 
 private:
   static map<string, Item*> products;
   Product();
-  Product(string nm);
+  Product(string _name);
 };
 
 #endif

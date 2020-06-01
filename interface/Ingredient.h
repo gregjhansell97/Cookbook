@@ -11,12 +11,12 @@ using namespace std;
 class Ingredient : Item{
 public:
 
-  static Item* create_ingredient(string nm);
+  static Item* create_ingredient(string _name);
 
 private:
   static map<string, Item*> ingredients;
   Ingredient();
-  Ingredient(string nm);
+  Ingredient(string _name);
 };
 
 #endif
